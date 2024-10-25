@@ -1,0 +1,54 @@
+.pinterest-grid {
+  column-count: 4;
+  column-gap: 10px;
+  justify-content: center;
+}
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .pinterest-grid {
+    column-count: 1; /* 1 columns for mobile devices */
+  }
+}
+/* Medium screens */
+@media (min-width: 600px) {
+  .pinterest-grid {
+    column-count: 3; /* 3 columns for medium screens */
+  }
+}
+/* Large screens */
+@media (min-width: 900px) {
+  .pinterest-grid {
+    column-count: 4; /* 4 columns for large screens */
+  }
+}
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .pinterest-grid {
+    column-count: 5; /* 5 columns for extra large screens */
+  }
+}
+
+.pinterest-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+.pinterest-item img {
+  width: 100%;
+  height: auto;
+}
+
+.pinterest-item .title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.pinterest-item .author {
+  margin-top: 5px;
+  font-size: 0.8em;
+  color: #888;
+}

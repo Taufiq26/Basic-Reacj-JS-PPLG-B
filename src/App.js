@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import AuraButton from './components/AuraButton';
 
-function App() {
+import AuraButton from './components/AuraButton';
+import Explore from './pages/Explore';
+
+function Home() {
   const name = "Taufiq";
   const [aura, setAura] = useState(0);
   const auraList = [1, 10, 100, 1000, -1, -10, -100, -1000];
@@ -28,8 +31,24 @@ function App() {
             </div>
           ))}
         </div>
+        <Link className="App-link" to={`/${name}/explore`}>
+          {"Let's explore!"}
+        </Link>
       </header>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Fragment>
+          <Route path="/" element={<Home />} />
+          <Route path="/:name/explore" element={<Explore />} />
+        </Fragment>
+      </Routes>
+    </Router>
   );
 }
 
